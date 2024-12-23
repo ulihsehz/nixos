@@ -2,13 +2,17 @@
   "nodes": {
     "clan-core": {
       "inputs": {
-        "disko": "disko",
+        "disko": [
+          "disko"
+        ],
         "flake-parts": "flake-parts",
         "nixos-facter-modules": "nixos-facter-modules",
         "nixpkgs": [
           "nixpkgs"
         ],
-        "sops-nix": "sops-nix",
+        "sops-nix": [
+          "sops-nix"
+        ],
         "systems": "systems",
         "treefmt-nix": "treefmt-nix"
       },
@@ -25,27 +29,6 @@
       }
     },
     "disko": {
-      "inputs": {
-        "nixpkgs": [
-          "clan-core",
-          "nixpkgs"
-        ]
-      },
-      "locked": {
-        "lastModified": 1734701201,
-        "narHash": "sha256-hk0roBX10j/hospoWIJIJj3i2skd7Oml6yKQBx7mTFk=",
-        "owner": "nix-community",
-        "repo": "disko",
-        "rev": "2ee76c861af3b895b3b104bae04777b61397485b",
-        "type": "github"
-      },
-      "original": {
-        "owner": "nix-community",
-        "repo": "disko",
-        "type": "github"
-      }
-    },
-    "disko_2": {
       "inputs": {
         "nixpkgs": [
           "nixpkgs"
@@ -106,6 +89,46 @@
         "type": "github"
       }
     },
+    "home-manager": {
+      "inputs": {
+        "nixpkgs": [
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1734944412,
+        "narHash": "sha256-36QfCAl8V6nMIRUCgiC79VriJPUXXkHuR8zQA1vAtSU=",
+        "owner": "nix-community",
+        "repo": "home-manager",
+        "rev": "8264bfe3a064d704c57df91e34b795b6ac7bad9e",
+        "type": "github"
+      },
+      "original": {
+        "owner": "nix-community",
+        "repo": "home-manager",
+        "type": "github"
+      }
+    },
+    "nix-index-database": {
+      "inputs": {
+        "nixpkgs": [
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1734838217,
+        "narHash": "sha256-zvMLS8BGn+kMG7tLLT3PJ67/S9yqZ9B7V8hKBa9cRRY=",
+        "owner": "nix-community",
+        "repo": "nix-index-database",
+        "rev": "d583b2d142f0428313df099f4a2dcf2a0496aa78",
+        "type": "github"
+      },
+      "original": {
+        "owner": "nix-community",
+        "repo": "nix-index-database",
+        "type": "github"
+      }
+    },
     "nixos-facter-modules": {
       "locked": {
         "lastModified": 1734596637,
@@ -140,16 +163,18 @@
     "root": {
       "inputs": {
         "clan-core": "clan-core",
-        "disko": "disko_2",
+        "disko": "disko",
         "flake-parts": "flake-parts_2",
+        "home-manager": "home-manager",
+        "nix-index-database": "nix-index-database",
         "nixpkgs": "nixpkgs",
+        "sops-nix": "sops-nix",
         "srvos": "srvos"
       }
     },
     "sops-nix": {
       "inputs": {
         "nixpkgs": [
-          "clan-core",
           "nixpkgs"
         ]
       },

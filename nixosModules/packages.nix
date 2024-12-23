@@ -11,7 +11,6 @@
     file
     wget
     htop
-    silver-searcher
     lsof
     tcpdump
     tmux

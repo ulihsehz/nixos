@@ -18,6 +18,7 @@
       {
         imports = [
           ./machines/flake-module.nix
+          ./home-manager/flake-module.nix
           inputs.clan-core.flakeModules.default
         ];
         systems = [
@@ -79,11 +80,22 @@
 
     clan-core.url = "https://git.clan.lol/clan/clan-core/archive/main.tar.gz";
     clan-core.inputs.nixpkgs.follows = "nixpkgs";
+    clan-core.inputs.disko.follows = "disko";
+    clan-core.inputs.sops-nix.follows = "sops-nix";
 
     srvos.url = "github:numtide/srvos/dotfiles";
     srvos.inputs.nixpkgs.follows = "nixpkgs";
 
     disko.url = "github:nix-community/disko";
     disko.inputs.nixpkgs.follows = "nixpkgs";
+
+    sops-nix.url = "github:Mic92/sops-nix";
+    sops-nix.inputs.nixpkgs.follows = "nixpkgs";
+
+    home-manager.url = "github:nix-community/home-manager";
+    home-manager.inputs.nixpkgs.follows = "nixpkgs";
+
+    nix-index-database.url = "github:nix-community/nix-index-database";
+    nix-index-database.inputs.nixpkgs.follows = "nixpkgs";
   };
 }

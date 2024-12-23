@@ -1,3 +1,4 @@
+{lib, ...}:
 {
   systemd.services.openssh = {
     before = [ "boot-complete.target" ];
@@ -8,5 +9,8 @@
   services.openssh = {
     enable = true;
     ports = [222];
+    settings = {
+      PasswordAuthentication = lib.mkForce true;
+    };
   };
 }

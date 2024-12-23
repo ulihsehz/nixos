@@ -52,7 +52,7 @@
     # ../../nixosModules/touchpad-hack
     # ../../nixosModules/tracing.nix
     # ../../nixosModules/data-mesher.nix
-    # ../../nixosModules/users.nix
+    ../../nixosModules/users.nix
     # ../../nixosModules/hyprspace.nix
   ];
 
@@ -62,8 +62,8 @@
 
   nixpkgs.pkgs = inputs.nixpkgs.legacyPackages.x86_64-linux;
 
-  system.etc.overlay.enable = true;
-  system.etc.overlay.mutable = true;
+  # system.etc.overlay.enable = true;
+  # system.etc.overlay.mutable = true;
   services.userborn.enable = true;
 
   environment.systemPackages = with pkgs; [

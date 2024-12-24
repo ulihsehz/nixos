@@ -56,6 +56,9 @@
     # ../../nixosModules/hyprspace.nix
   ];
 
+  sops.secrets.my-password.neededForUsers = true;
+  users.users.joerg.hashedPasswordFile = config.sops.secrets.my-password.path;
+
   boot.loader.systemd-boot.enable = true;
 
   hardware.graphics.enable32Bit = config.hardware.graphics.enable;

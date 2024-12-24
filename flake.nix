@@ -10,15 +10,14 @@
     inputs@{ flake-parts, ... }:
     flake-parts.lib.mkFlake { inherit inputs; } (
       {
-        withSystem,
         self,
-        config,
         ...
       }:
       {
         imports = [
           ./machines/flake-module.nix
           ./home-manager/flake-module.nix
+          ./devshell/flake-module.nix
           inputs.clan-core.flakeModules.default
         ];
         systems = [
@@ -36,6 +35,8 @@
           }:
           {
             # make pkgs available to all `perSystem` functions
+            # Make our overlay available to the devShell(Nix shell). See `nixpkgs.overlays` for system overlays.
+            # see more at https://flake.parts/overlays#consuming-an-overlay
             _module.args.pkgs = inputs'.nixpkgs.legacyPackages;
 
             checks =
@@ -82,6 +83,7 @@
     clan-core.inputs.nixpkgs.follows = "nixpkgs";
     clan-core.inputs.disko.follows = "disko";
     clan-core.inputs.sops-nix.follows = "sops-nix";
+    clan-core.inputs.treefmt-nix.follows = "treefmt-nix";
 
     srvos.url = "github:numtide/srvos/dotfiles";
     srvos.inputs.nixpkgs.follows = "nixpkgs";
@@ -97,5 +99,8 @@
 
     nix-index-database.url = "github:nix-community/nix-index-database";
     nix-index-database.inputs.nixpkgs.follows = "nixpkgs";
+
+    treefmt-nix.url = "github:numtide/treefmt-nix";
+    treefmt-nix.inputs.nixpkgs.follows = "nixpkgs";
   };
 }

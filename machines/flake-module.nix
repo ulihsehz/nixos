@@ -1,6 +1,6 @@
 { self, inputs, ... }:
 {
- flake.nixosModules.default = ../nixosModules/default.nix;
+  flake.nixosModules.default = ../nixosModules/default.nix;
   clan = {
     meta.name = "alice";
 

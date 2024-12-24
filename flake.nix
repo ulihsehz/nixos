@@ -18,6 +18,7 @@
           ./machines/flake-module.nix
           ./home-manager/flake-module.nix
           ./devshell/flake-module.nix
+          ./pkgs/flake-module.nix
           inputs.clan-core.flakeModules.default
         ];
         systems = [

@@ -7,6 +7,7 @@
 {
   srvos.flake = inputs.self;
   documentation.info.enable = false;
+  # Set this for clan commands use ssh i.e. `clan machines update`
   clan.core.networking.targetHost = lib.mkDefault "root@${config.networking.hostName}.r";
 
   security.sudo.execWheelOnly = lib.mkForce false;

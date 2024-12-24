@@ -100,7 +100,7 @@
             # this one should work for aarch64-linux/x86_64-linux and macos
             common = homeManagerConfiguration { };
 
-            mac-desktop = homeManagerConfiguration { extraModules = [ ./macos-desktop.nix ]; };
+            # mac-desktop = homeManagerConfiguration { extraModules = [ ./macos-desktop.nix ]; };
           }
           // lib.optionalAttrs (pkgs.hostPlatform.system == "x86_64-linux") {
             desktop = homeManagerConfiguration { extraModules = [ ./desktop.nix ]; };

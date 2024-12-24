@@ -57,7 +57,9 @@
   ];
 
   sops.secrets.my-password.neededForUsers = true;
+  users.mutableUsers = false;
   users.users.joerg.hashedPasswordFile = config.sops.secrets.my-password.path;
+
 
   boot.loader.systemd-boot.enable = true;
 
@@ -84,9 +86,6 @@
   # services.udev.packages = with pkgs; [ platformio-core.udev ]; # platformio-core: Open source ecosystem for IoT development
 
   # services.pcscd.enable = true; # PCSC-Lite daemon, to access smart cards using SCard API (PC/SC)
-
-  # users.mutableUsers = false;
-  # users.users.joerg.hashedPasswordFile = config.clan.core.facts.services.root-password.secret.password-hash.path;
 
   # https://community.frame.work/t/guide-linux-battery-life-tuning/6665
   #services.tlp.enable = true;

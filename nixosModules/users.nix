@@ -8,7 +8,7 @@ in
   users.users = {
     joerg = {
       isNormalUser = true;
-      initialPassword = "123";
+      # initialPassword = "123"; # replaced by sops hashedPasswordFile
       home = "/home/joerg";
       extraGroups = [
         "wheel"

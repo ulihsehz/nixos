@@ -64,7 +64,7 @@
 
   # system.etc.overlay.enable = true;
   # system.etc.overlay.mutable = true;
-  services.userborn.enable = true;
+  # services.userborn.enable = true; # Declaratively manage Linux users and groups
 
   environment.systemPackages = with pkgs; [
     # sunshine
@@ -72,15 +72,15 @@
     # nixos-rebuild-ng
   ];
 
-  services.fwupd.enable = true;
+  # services.fwupd.enable = true; # a DBus service that allows applications to update firmware
 
-  hardware.saleae-logic.enable = true;
+  # hardware.saleae-logic.enable = true; # udev rules for Saleae Logic devices
 
-  services.ollama.enable = true;
+  # services.ollama.enable = true;
 
-  services.udev.packages = with pkgs; [ platformio-core.udev ];
+  # services.udev.packages = with pkgs; [ platformio-core.udev ]; # platformio-core: Open source ecosystem for IoT development
 
-  services.pcscd.enable = true;
+  # services.pcscd.enable = true; # PCSC-Lite daemon, to access smart cards using SCard API (PC/SC)
 
   # users.mutableUsers = false;
   # users.users.joerg.hashedPasswordFile = config.clan.core.facts.services.root-password.secret.password-hash.path;
